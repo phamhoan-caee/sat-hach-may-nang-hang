@@ -191,24 +191,24 @@ async function submitQuiz() {
     
     alert(`Chúc mừng! Kết quả của bạn: ${score}/30 câu - Trạng thái: ${status}`);
 
-    // Gửi dữ liệu về Google Sheets
+   // --- GỬI DỮ LIỆU VỀ GOOGLE SHEETS ---
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwYEfB-aH8qQZZAIgiBi5ib0vMTypcshOg9mSS-3284A7cMziwzPJk3g6O24q1RN_EJ/exec';
+    
     const payload = {
         name: document.getElementById('studentName').value,
-        id: document.getElementById('studentID').value,
+        studentID: document.getElementById('studentID').value,
         score: score,
         status: status
     };
 
-    try {
-        await fetch(WEB_APP_URL, {
-            method: "POST",
-            mode: "no-cors", // Sử dụng no-cors cho link script
-            body: JSON.stringify(payload)
-        });
-    } catch (e) {
-        // no-cors luôn catch lỗi nhưng dữ liệu vẫn có thể đã gửi
-        console.log("Kết thúc gửi.");
-    }
-
-    location.reload(); // Quay lại màn hình bắt đầu
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    .then(() => {
+        console.log("Đã gửi dữ liệu thành công");
+    })
+    .catch(error => console.error('Lỗi gửi Sheets:', error));
 }
