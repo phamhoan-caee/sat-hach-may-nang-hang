@@ -1,27 +1,29 @@
 /* --- 1. BIẾN MÀU SẮC & CẤU HÌNH CHUNG --- */
 :root {
-    --caee-blue: #004a99;      /* Màu xanh thương hiệu CAEE */
-    --caee-orange: #ff6600;    /* Màu cam nút bấm */
-    --bg-light: #f4f7f6;      /* Màu nền tổng thể */
+    --caee-blue: #003399;      /* Màu xanh đậm chủ đạo (background) */
+    --header-blue: #0040cc;    /* Màu xanh thanh header */
+    --btn-orange: #ff6600;    /* Màu cam nút bấm */
+    --btn-blue: #3366ff;      /* Màu xanh nút điều hướng */
+    --bg-light: #f4f7f6;      /* Màu nền vùng câu hỏi và sidebar */
     --text-dark: #333333;     /* Màu chữ chính */
-    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-    --shadow-md: 0 5px 15px rgba(0,0,0,0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
     --transition: all 0.2s ease;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    background-color: var(--bg-light);
+    background-color: var(--caee-blue); /* Nền xanh đậm toàn màn hình */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-dark);
     line-height: 1.5;
     overflow-x: hidden;
+    padding-top: 60px; /* Chừa chỗ cho header fixed */
 }
 
 /* --- 2. HEADER BAR (THANH TRÊN CÙNG) --- */
 .caee-header {
-    background-color: var(--caee-blue);
+    background-color: var(--header-blue);
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -31,16 +33,15 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.header-title { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem; }
+.header-title { display: flex; align-items: center; gap: 8px; font-weight: bold; font-size: 0.95rem; }
 .header-info { display: flex; align-items: center; gap: 15px; }
-.student-id-display { font-size: 0.85rem; opacity: 0.9; border-right: 1px solid rgba(255,255,255,0.3); padding-right: 15px; }
+.student-id-display { font-size: 0.85rem; opacity: 0.9; }
 
 .timer-box {
-    background-color: #ff3333; /* Màu đỏ nổi bật cho đồng hồ */
-    padding: 5px 15px;
+    background-color: #ff3333; /* Màu đỏ cho đồng hồ */
+    padding: 4px 15px;
     border-radius: 4px;
     font-weight: bold;
     font-family: monospace;
@@ -49,11 +50,10 @@ body {
 
 /* --- 3. MÀN HÌNH CHÀO MỪNG (WELCOME PAGE) --- */
 #start-screen {
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--caee-blue); /* Nền xanh đậm toàn màn hình */
 }
 
 .welcome-container {
@@ -63,7 +63,7 @@ body {
     border-radius: 12px;
     overflow: hidden;
     display: flex;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Cột bên trái (Xanh) */
@@ -79,30 +79,29 @@ body {
     text-align: center;
 }
 .welcome-left img { width: 50px; margin-bottom: 15px; }
-.welcome-left h5 { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.welcome-left h5 { font-size: 0.9rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
 
 /* Cột bên phải (Trắng) */
 .welcome-right {
     width: 65%;
     padding: 30px;
 }
-.school-name { font-weight: bold; color: #333; font-size: 1rem; margin-bottom: 5px; }
-.faculty-name { color: var(--caee-blue); font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; }
+.school-name { font-weight: bold; color: #333; font-size: 1rem; margin-bottom: 5px; text-align: start; }
+.faculty-name { color: var(--header-blue); font-size: 0.8rem; font-weight: bold; margin-bottom: 20px; text-align: start; }
 
 .form-group { margin-bottom: 15px; text-align: start; }
-.form-group label { font-size: 0.8rem; color: #777; font-weight: 600; }
+.form-group label { font-size: 0.8rem; color: #777; font-weight: bold; }
 .form-control {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 6px;
-    background-color: #fafafa;
     transition: var(--transition);
 }
-.form-control:focus { border-color: var(--caee-blue); background-color: white; outline: none; }
+.form-control:focus { border-color: var(--header-blue); background-color: white; outline: none; }
 
 .btn-start {
-    background-color: var(--caee-orange);
+    background-color: var(--btn-orange);
     color: white;
     border: none;
     width: 100%;
@@ -111,10 +110,6 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
     transition: var(--transition);
     margin-top: 10px;
 }
@@ -124,7 +119,6 @@ body {
 
 /* --- 4. CẤU TRÚC MÀN HÌNH THI (MAIN EXAM PAGE) --- */
 #quiz-screen {
-    margin-top: 60px; /* Chừa chỗ cho header fixed */
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 280px; /* Cột câu hỏi rộng, cột lưới hẹp */
@@ -136,7 +130,7 @@ body {
 
 /* Vùng câu hỏi */
 #quiz-content {
-    background: white;
+    background: #ffffff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: var(--shadow-sm);
@@ -148,10 +142,10 @@ body {
     align-items: center;
     margin-bottom: 20px;
 }
-.subject-badge { background: #e6f0fa; color: var(--caee-blue); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+.subject-badge { background: #e6f0fa; color: var(--caee-blue); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
 .q-count { color: #999; font-size: 0.85rem; }
 
-.question-text { font-size: 1.1rem; font-weight: 600; margin-bottom: 25px; color: #222; }
+.question-text { font-size: 1.1rem; font-weight: bold; margin-bottom: 25px; color: #222; }
 
 /* Tùy chỉnh ô đáp án */
 .option-item {
@@ -175,15 +169,15 @@ body {
     padding: 8px 18px;
     border-radius: 4px;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
     transition: var(--transition);
     border: 1px solid transparent;
 }
 .btn-prev { background: white; color: #999; border-color: #eee; }
 .btn-prev:hover { border-color: #ccc; color: #777; }
-.btn-next { background: var(--caee-blue); color: white; margin-left: auto; } /* Đẩy nút Tiếp sang phải */
-.btn-next:hover { background: #003366; }
+.btn-next { background: var(--btn-blue); color: white; margin-left: auto; } /* Đẩy nút Tiếp sang phải */
+.btn-next:hover { background: #0044cc; }
 
 /* --- 5. CỘT SƠ ĐỒ CÂU HỎI (RIGHT SIDEBAR) --- */
 .sidebar-right { display: flex; flex-direction: column; gap: 20px; }
@@ -194,7 +188,7 @@ body {
     border-radius: 8px;
     box-shadow: var(--shadow-sm);
 }
-.sidebar-title { font-size: 0.85rem; font-weight: 600; color: #666; margin-bottom: 15px; }
+.sidebar-title { font-size: 0.85rem; font-weight: bold; color: #666; margin-bottom: 15px; }
 
 /* Lưới 5x6 */
 .q-grid {
@@ -211,14 +205,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
+    font-weight: bold;
     font-size: 0.8rem;
     cursor: pointer;
     transition: var(--transition);
 }
 .grid-item:hover { border-color: var(--caee-blue); }
 .grid-item.answered { background: var(--caee-blue); color: white; border-color: var(--caee-blue); }
-.grid-item.active { border: 2px solid var(--caee-orange); background: white; color: var(--caee-blue); }
+.grid-item.active { border: 2px solid var(--btn-orange); background: white; color: var(--caee-blue); }
 
 /* Vùng trạng thái màu */
 .status-legend-card {
@@ -231,7 +225,7 @@ body {
 .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .dot { width: 10px; height: 10px; border-radius: 50%; }
 .dot-green { background-color: var(--caee-blue); } /* Màu xanh trong hình */
-.dot-orange { background-color: var(--caee-orange); }
+.dot-orange { background-color: var(--btn-orange); }
 
 /* Nút nộp bài */
 .btn-submit {
