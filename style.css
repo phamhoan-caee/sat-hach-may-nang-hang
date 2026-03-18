@@ -251,3 +251,26 @@ body {
     .student-id-display { font-size: 0.75rem; padding-right: 10px; }
     .timer-box { font-size: 0.95rem; padding: 4px 10px; }
 }
+/* --- Căn giữa tiêu đề (Thêm vào cuối file) --- */
+.welcome-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.school-name {
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.faculty-name {
+    width: 100%;
+    font-weight: bold;
+    color: #0056b3;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
