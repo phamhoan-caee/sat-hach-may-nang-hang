@@ -195,10 +195,10 @@ async function submitQuiz() {
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwSwuj67kfx_es9c0UYIY_KnyLJHbEX2sc7joB5h8hPChDj5YLaPgdsfzHwNqBu7z4w/exec';
     
     const payload = {
-        name: document.getElementById('studentName').value, 
-        studentID: document.getElementById('studentID').value,
-        score: score,
-        status: status
+        name: document.getElementById('studentName').value, // Gửi cho cột HOTEN
+        id: document.getElementById('studentID').value,     // Gửi cho cột KHOA
+        score: score + "/30",                               // Gửi cho cột DIEM
+        status: status                                      // Gửi cho cột KETQUA
     };
 
     fetch(scriptURL, {
