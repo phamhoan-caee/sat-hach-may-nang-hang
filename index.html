@@ -3,128 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sát hạch Xe nâng AI - 101 Câu hỏi</title>
+    <title>Sát hạch Xe nâng CAEE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root { --primary-blue: #004a99; --accent-orange: #ff9800; --bg-gray: #f8f9fa; --ai-purple: #6e8efb; }
-        body { background-color: var(--bg-gray); font-family: 'Segoe UI', sans-serif; }
-        
-        #welcome-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #004a99, #002d5e); color: white; }
-        .welcome-card { background: white; color: #333; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); width: 100%; max-width: 550px; }
-
-        .exam-container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
-        .question-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 1.5rem; position: relative; }
-        
-        .option-item { border: 2px solid #eee; border-radius: 10px; padding: 1rem; margin-bottom: 0.8rem; cursor: pointer; transition: all 0.2s; position: relative; }
-        .option-item:hover { border-color: var(--primary-blue); background: #f0f7ff; }
-        .option-item.selected { border-color: var(--primary-blue); background: #e7f1ff; font-weight: bold; }
-        .option-item.correct { background: #d4edda; border-color: #28a745; }
-        .option-item.incorrect { background: #f8d7da; border-color: #dc3545; }
-
-        .ai-badge { background: linear-gradient(90deg, #6e8efb, #a777e3); color: white; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 5px; }
-        .ai-box { background: #f4f7ff; border-left: 5px solid var(--ai-purple); padding: 1.2rem; border-radius: 0 12px 12px 0; margin-top: 1.5rem; animation: fadeIn 0.5s ease; }
-        
-        .loading-dots:after { content: ' .'; animation: dots 1.5s steps(5, end) infinite; }
-        @keyframes dots { 0%, 20% { content: ' .'; } 40% { content: ' ..'; } 60% { content: ' ...'; } 80%, 100% { content: ''; } }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .q-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
-        .q-num { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; background: white; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: 0.2s; }
-        .q-num:hover { border-color: var(--primary-blue); color: var(--primary-blue); }
-        .q-num.active { border: 2px solid var(--accent-orange); font-weight: bold; box-shadow: 0 0 8px rgba(255,152,0,0.4); }
-        .q-num.answered { background: var(--primary-blue); color: white; border-color: var(--primary-blue); }
-        .q-num.correct { background: #28a745 !important; color: white; border-color: #28a745; }
-        .q-num.incorrect { background: #dc3545 !important; color: white; border-color: #dc3545; }
-
-        .timer { font-size: 1.6rem; font-weight: 800; color: #dc3545; font-family: monospace; }
-        .q-image { max-width: 100%; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid #eee; }
-        
-        .ai-btn { background: #f0f4ff; color: var(--ai-purple); border: 1px solid var(--ai-purple); border-radius: 10px; transition: 0.3s; }
-        .ai-btn:hover { background: var(--ai-purple); color: white; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Màn hình chào mừng -->
-<div id="welcome-screen">
-    <div class="welcome-card text-center">
-        <div class="mb-3"><i class="fas fa-truck-loading fa-3x text-primary"></i></div>
-        <h2 class="fw-bold text-primary mb-1">SÁT HẠCH XE NÂNG</h2>
-        <p class="text-muted mb-4">Hệ thống luyện thi thông minh hỗ trợ bởi Gemini AI</p>
-        
-        <div class="mb-4 text-start bg-light p-3 rounded-4">
-            <label class="small fw-bold text-muted mb-2">THÔNG TIN THÍ SINH</label>
-            <input type="text" id="user-name" class="form-control mb-3 py-2" placeholder="Họ và tên">
-            <input type="text" id="user-class" class="form-control py-2" placeholder="Lớp / Khóa học">
+<div class="container mt-4">
+    <div id="start-screen" class="card shadow p-4 text-center mx-auto" style="max-width: 500px;">
+        <h2 class="text-primary fw-bold">SÁT HẠCH XE NÂNG</h2>
+        <p class="text-muted">Trường Cao Đẳng Cơ Điện Nông Nghiệp và Môi Trường</p>
+        <div class="text-start mb-3">
+            <label class="form-label fw-bold">Họ và tên:</label>
+            <input type="text" id="studentName" class="form-control mb-2" placeholder="Nhập họ tên">
+            <label class="form-label fw-bold">Mã số/Lớp:</label>
+            <input type="text" id="studentID" class="form-control" placeholder="Nhập mã số">
         </div>
+        <button class="btn btn-primary btn-lg w-100" onclick="startQuiz()">BẮT ĐẦU THI</button>
+    </div>
 
-        <div class="alert alert-info small text-start border-0 shadow-sm">
-            <i class="fas fa-clipboard-check me-2"></i> <strong>Cấu trúc đề:</strong> 30 câu hỏi / 20 phút.<br>
-            <i class="fas fa-graduation-cap me-2"></i> <strong>Điều kiện:</strong> Trả lời đúng từ 25/30 câu.
-        </div>
-
-        <div class="d-grid gap-3">
-            <button class="btn ai-btn py-2 fw-bold" onclick="getAIBriefing()">
-                <i class="fas fa-sparkles me-1"></i> ✨ AI Tóm tắt kiến thức cốt lõi
-            </button>
-            <button class="btn btn-primary btn-lg py-3 rounded-3 shadow" onclick="startExam()">BẮT ĐẦU THI NGAY</button>
-        </div>
-        
-        <div id="ai-brief-result" class="mt-4 small text-start p-3 bg-light rounded-3 border-start border-4 border-info" style="display:none; max-height: 200px; overflow-y: auto;"></div>
+    <div id="quiz-screen" style="display:none;">
+        <div class="sticky-timer text-center mb-3" id="timer">Thời gian còn lại: 20:00</div>
+        <div id="quiz-content"></div>
+        <button class="btn btn-success btn-lg w-100 mb-5" onclick="submitQuiz()">NỘP BÀI THI</button>
     </div>
 </div>
 
-<!-- Giao diện bài thi -->
-<div id="exam-ui" class="exam-container" style="display:none;">
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="card p-3 mb-3 border-0 shadow-sm d-flex flex-row justify-content-between align-items-center">
-                <div>
-                    <h5 class="mb-0 fw-bold" id="question-label">CÂU HỎI 1</h5>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                    <span class="badge bg-light text-dark border p-2" id="question-progress">1/30</span>
-                    <div class="timer" id="timer">20:00</div>
-                </div>
-            </div>
-
-            <div class="question-card shadow-sm border-0">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                    <div class="ai-badge" id="ai-status">✨ AI Assistant Đang sẵn sàng</div>
-                    <button class="btn btn-outline-primary btn-sm rounded-circle" onclick="speakQuestion()" title="Nghe câu hỏi">
-                        <i class="fas fa-volume-up"></i>
-                    </button>
-                </div>
-                
-                <h5 id="question-text" class="fw-bold mb-4" style="line-height: 1.6;"></h5>
-
-                <div id="question-image-container"></div>
-                
-                <div id="options-list"></div>
-
-                <!-- Box giải thích của AI -->
-                <div id="ai-explanation" class="ai-box" style="display:none;">
-                    <div class="fw-bold text-primary mb-2"><i class="fas fa-robot me-2"></i>✨ AI Giải thích chuyên sâu:</div>
-                    <p id="ai-exp-text" class="mb-0 small text-secondary" style="line-height: 1.7;"></p>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-between mb-4">
-                <button class="btn btn-white border shadow-sm px-4" onclick="prevQuestion()"><i class="fas fa-chevron-left me-2"></i>Quay lại</button>
-                <button class="btn btn-primary shadow px-4" id="next-btn" onclick="nextQuestion()">Tiếp theo<i class="fas fa-chevron-right ms-2"></i></button>
-            </div>
-        </div>
-
-        <div class="col-lg-4">
-            <div class="card p-4 shadow-sm border-0 mb-4 rounded-4">
-                <h6 class="fw-bold mb-3"><i class="fas fa-th me-2 text-primary"></i>Danh sách câu hỏi</h6>
-                <div class="q-grid mb-4" id="nav-grid"></div>
-                
-                <hr>
-                
-                <button class="btn btn-danger w-100 py-3 fw-bold shadow-sm rounded-3 mb-3" id="submit-btn" onclick="finishExam()">NỘP BÀI THI</button>
-                
-                <div id="ai-final-feedback" class="ai-box" style="display:none; border-left-color: #ff9800;">
-                    <h6 class="fw-bold"><i class="fas fa-comment-dots me-2"></i>✨ AI Nhận xét kết quả</h6>
-                    <p id="ai-feedback
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
