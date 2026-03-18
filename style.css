@@ -1,0 +1,101 @@
+/* 1. Tổng thể trang web */
+body {
+    background-color: #f4f7f9;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 2. Khung chứa câu hỏi (Card) */
+.question-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #1a73e8; /* Thanh màu xanh đặc trưng của CAEE */
+    transition: transform 0.2s ease;
+}
+
+/* Hiệu ứng nhẹ khi học viên đang xem câu hỏi */
+.question-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. Tiêu đề câu hỏi */
+.question-box h5 {
+    color: #1a73e8;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* 4. Tùy chỉnh các lựa chọn (Đáp án) */
+.form-check {
+    padding: 12px 15px 12px 40px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* Đổi màu nền khi học viên chọn đáp án */
+.form-check:has(input:checked) {
+    background-color: #e8f0fe;
+    border-color: #1a73e8;
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+
+.form-check-label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+/* 5. Đồng hồ đếm ngược (Sticky) */
+.sticky-timer {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffc107;
+    color: #212529;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 6. Các nút bấm (Start, Submit) */
+.btn-primary, .btn-success {
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover {
+    background-color: #1557b0;
+    transform: scale(1.02);
+}
+
+/* 7. Hình ảnh minh họa xe nâng */
+.img-fluid {
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 2px solid #eee;
+}
+
+/* 8. Màn hình chờ tải dữ liệu */
+#start-screen {
+    border-radius: 20px;
+    overflow: hidden;
+}
