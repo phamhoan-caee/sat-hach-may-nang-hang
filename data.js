@@ -876,15 +876,339 @@ const questionBank = [
     "explain": "Lịch bảo dưỡng cho xe mới thường yêu cầu thay dầu và lọc dầu động cơ sau 200 giờ hoạt động đầu tiên để loại bỏ mạt kim loại."
   },
   {
-    "id": 74,
+   "id": 74,
     "question": "Tại sao không được dùng tay trần để kiểm tra rò rỉ dầu thủy lực?",
     "options": [
       "Vì tay sẽ bị bẩn",
-      "Vì áp suất cao có thể đâm xuyên qua da gây chấn thương nghiêm trọng",
-      "Vì dầu rất nóng",
-      "Vì dầu làm hỏng da tay"
+      "Vì dầu thủy lực rất nóng",
+      "Vì áp suất cực cao có thể đâm xuyên qua da gây nhiễm độc và chấn thương nặng",
+      "Vì sẽ làm hỏng hệ thống"
     ],
-    "answer": "Vì áp suất cao có thể đâm xuyên qua da gây chấn thương nghiêm trọng",
-    "explain": "Dầu thủy lực dưới áp suất cao có sức mạnh cực lớn, có thể bắn xuyên qua mô da vào mạch máu gây nhiễm trùng hoặc hoại tử."
+    "answer": "Vì áp suất cực cao có thể đâm xuyên qua da gây nhiễm độc và chấn thương nặng",
+    "explain": "Áp suất dầu thủy lực rất lớn, một vết rò nhỏ cũng có thể bắn tia dầu xuyên qua da như một mũi kim, gây hoại tử mô bên trong."
+  },
+  {
+    "id": 75,
+    "question": "Khi kiểm tra mức dầu thủy lực, càng nâng và trụ nâng phải ở vị trí nào?",
+    "options": [
+      "Nâng lên cao nhất",
+      "Hạ thấp nhất, trụ nâng nghiêng hết về phía sau",
+      "Hạ thấp nhất, trụ nâng thẳng đứng hoặc nghiêng nhẹ về trước",
+      "Ở vị trí bất kỳ"
+    ],
+    "answer": "Hạ thấp nhất, trụ nâng thẳng đứng hoặc nghiêng nhẹ về trước",
+    "explain": "Đây là vị trí dầu hồi về bình chứa nhiều nhất, giúp kiểm tra mức dầu chính xác nhất."
+  },
+  {
+    "id": 76,
+    "question": "Bộ phận 'đối trọng' trên xe nâng có tác dụng gì?",
+    "options": [
+      "Làm xe đẹp hơn",
+      "Giúp xe chạy nhanh hơn",
+      "Thăng bằng cho xe khi nâng hàng ở phía trước",
+      "Để chứa nhiên liệu"
+    ],
+    "answer": "Thăng bằng cho xe khi nâng hàng ở phía trước",
+    "explain": "Đối trọng nằm ở phía sau xe để cân bằng với trọng lượng hàng hóa đặt trên càng nâng ở phía trước, tránh lật xe."
+  },
+  {
+    "id": 77,
+    "question": "Khi di chuyển trên mặt đường nghiêng (nghiêng trái/phải), nguy cơ lớn nhất là gì?",
+    "options": [
+      "Tốn xăng",
+      "Mòn lốp không đều",
+      "Lật xe sang bên thấp hơn",
+      "Hỏng động cơ"
+    ],
+    "answer": "Lật xe sang bên thấp hơn",
+    "explain": "Mặt đường nghiêng làm trọng tâm xe lệch sang một bên, rất dễ vượt ra khỏi tam giác ổn định gây lật ngang."
+  },
+  {
+    "id": 78,
+    "question": "Dây đai an toàn trên xe nâng có tác dụng chính là gì?",
+    "options": [
+      "Tránh bị cảnh sát phạt",
+      "Giữ người lái không bị văng ra ngoài và bị khung cabin đè lên khi xe lật",
+      "Giúp ngồi lái thoải mái hơn",
+      "Chống buồn ngủ"
+    ],
+    "answer": "Giữ người lái không bị văng ra ngoài và bị khung cabin đè lên khi xe lật",
+    "explain": "Đa số tử vong do lật xe nâng là do người lái cố nhảy ra ngoài và bị khung cabin đè trúng. Dây an toàn giữ bạn ở trong vùng bảo vệ."
+  },
+  {
+    "id": 79,
+    "question": "Khi xe nâng bị mất phanh chân, người lái nên xử lý thế nào?",
+    "options": [
+      "Nhảy ra khỏi xe ngay",
+      "Tắt máy, kéo từ từ phanh tay và hạ thấp càng nâng xuống mặt sàn để tạo ma sát",
+      "Cứ để xe chạy cho đến khi tự dừng",
+      "Bẻ lái vào tường"
+    ],
+    "answer": "Tắt máy, kéo từ từ phanh tay và hạ thấp càng nâng xuống mặt sàn để tạo ma sát",
+    "explain": "Hạ càng nâng giúp tạo lực cản ma sát với mặt đất để hỗ trợ dừng xe trong tình huống khẩn cấp."
+  },
+  {
+    "id": 80,
+    "question": "Tại sao không được nâng hàng khi xe đang di chuyển ở tốc độ cao?",
+    "options": [
+      "Vì gây tốn điện/dầu",
+      "Vì làm giảm tầm nhìn và thay đổi trọng tâm đột ngột gây mất ổn định",
+      "Vì hàng sẽ bị bẩn",
+      "Vì gây tiếng ồn lớn"
+    ],
+    "answer": "Vì làm giảm tầm nhìn và thay đổi trọng tâm đột ngột gây mất ổn định",
+    "explain": "Vừa chạy nhanh vừa nâng hàng khiến trọng tâm thay đổi liên tục, chỉ cần một gờ nhỏ cũng đủ làm xe lật."
+  },
+  {
+    "id": 81,
+    "question": "Khi sạc xe nâng điện, cần chú ý điều gì về bình điện (ắc quy)?",
+    "options": [
+      "Đậy thật kín các nút bình",
+      "Mở nắp thùng xe hoặc nắp bình (nếu có quy định) để thoát khí gas và tản nhiệt",
+      "Sạc càng nhanh càng tốt",
+      "Vừa sạc vừa chạy máy lạnh"
+    ],
+    "answer": "Mở nắp thùng xe hoặc nắp bình (nếu có quy định) để thoát khí gas và tản nhiệt",
+    "explain": "Khi sạc, bình điện sinh nhiệt và khí Hydro. Việc thông thoáng giúp tránh tích tụ khí gây nổ."
+  },
+  {
+    "id": 82,
+    "question": "Biển báo hình tam giác viền đỏ, nền vàng có hình chiếc xe nâng bên trong có ý nghĩa gì?",
+    "options": [
+      "Khu vực cấm xe nâng",
+      "Biển báo nguy hiểm: Khu vực có xe nâng hoạt động",
+      "Bãi đỗ xe nâng",
+      "Nơi sửa chữa xe nâng"
+    ],
+    "answer": "Biển báo nguy hiểm: Khu vực có xe nâng hoạt động",
+    "explain": "Đây là biển cảnh báo người đi bộ chú ý vì có xe nâng thường xuyên di chuyển qua lại."
+  },
+  {
+    "id": 83,
+    "question": "Khi nhìn thấy dầu loang trên mặt sàn kho, người lái xe nâng phải làm gì?",
+    "options": [
+      "Lái đè lên cho sạch",
+      "Dừng xe, cảnh báo cho người khác và báo bộ phận vệ sinh xử lý ngay",
+      "Mặc kệ vì không phải việc của mình",
+      "Chạy nhanh qua để không bị dính dầu"
+    ],
+    "answer": "Dừng xe, cảnh báo cho người khác và báo bộ phận vệ sinh xử lý ngay",
+    "explain": "Dầu trên sàn là tác nhân gây trượt bánh xe nâng và té ngã cho người đi bộ, cực kỳ nguy hiểm."
+  },
+  {
+    "id": 84,
+    "question": "Thời hạn kiểm định kỹ thuật an toàn định kỳ đối với xe nâng thường là bao lâu?",
+    "options": [
+      "5 năm/lần",
+      "1 năm/lần (hoặc theo quy định của nhà sản xuất/cơ quan chức năng)",
+      "10 năm/lần",
+      "Không cần kiểm định"
+    ],
+    "answer": "1 năm/lần (hoặc theo quy định của nhà sản xuất/cơ quan chức năng)",
+    "explain": "Xe nâng là thiết bị có yêu cầu nghiêm ngặt về an toàn lao động nên phải kiểm định định kỳ hàng năm."
+  },
+  {
+    "id": 85,
+    "question": "Khi muốn vượt qua một chiếc xe nâng khác đang đi cùng chiều, bạn nên làm gì?",
+    "options": [
+      "Nhấn còi liên tục và chạy lên",
+      "Không được phép vượt ở những nơi tầm nhìn hạn chế hoặc ngã tư đường nội bộ",
+      "Vượt bên phải",
+      "Đẩy đuôi xe trước để xin đường"
+    ],
+    "answer": "Không được phép vượt ở những nơi tầm nhìn hạn chế hoặc ngã tư đường nội bộ",
+    "explain": "Vượt xe trong kho rất nguy hiểm do không gian hẹp và nhiều điểm mù. Chỉ vượt khi thực sự an toàn và được cho phép."
+  },
+  {
+    "id": 86,
+    "question": "Khi nâng một khối hàng có kích thước quá lớn che khuất tầm nhìn phía trước, người lái phải làm gì?",
+    "options": [
+      "Cố gắng nhìn qua khe hở",
+      "Cho xe chạy lùi và quan sát về phía sau (hướng di chuyển)",
+      "Đứng hẳn lên để nhìn",
+      "Nhờ một người ngồi trên hàng để chỉ đường"
+    ],
+    "answer": "Cho xe chạy lùi và quan sát về phía sau (hướng di chuyển)",
+    "explain": "Nếu hàng che tầm nhìn phía trước, lùi xe là cách duy nhất để quan sát đường đi một cách an toàn."
+  },
+  {
+    "id": 87,
+    "question": "Lượng axit trong bình ắc quy xe nâng điện bị thiếu, bạn nên châm thêm gì?",
+    "options": [
+      "Axit nồng độ cao",
+      "Nước cất chuyên dụng",
+      "Nước lọc",
+      "Nước khoáng"
+    ],
+    "answer": "Nước cất chuyên dụng",
+    "explain": "Chỉ được châm nước cất. Châm axit hoặc nước lẫn tạp chất sẽ làm hỏng các tấm bản cực bên trong bình."
+  },
+  {
+    "id": 88,
+    "question": "Ký hiệu 'Max Capacity' trên bảng thông số xe nâng nghĩa là gì?",
+    "options": [
+      "Tốc độ tối đa",
+      "Chiều cao tối đa",
+      "Tải trọng nâng tối đa cho phép",
+      "Lượng dầu tối đa"
+    ],
+    "answer": "Tải trọng nâng tối đa cho phép",
+    "explain": "Đây là mức tải nặng nhất mà xe có thể nâng được ở tâm tải tiêu chuẩn."
+  },
+  {
+    "id": 89,
+    "question": "Khi xuống dốc không chở hàng, hướng di chuyển nào là an toàn nhất?",
+    "options": [
+      "Lùi xuống dốc",
+      "Tiến xuống dốc",
+      "Đi chéo",
+      "Tắt máy để xe tự trôi"
+    ],
+    "answer": "Tiến xuống dốc",
+    "explain": "Khi không có hàng, trọng tâm xe nằm ở phía sau (đối trọng). Tiến xuống dốc giúp xe ổn định hơn."
+  },
+  {
+    "id": 90,
+    "question": "Âm thanh 'tít tít' liên tục khi xe nâng đang lùi có tác dụng gì?",
+    "options": [
+      "Để người lái đỡ buồn ngủ",
+      "Báo hiệu cho người xung quanh biết xe đang lùi để tránh",
+      "Báo hiệu xe bị hỏng",
+      "Để nghe cho vui"
+    ],
+    "answer": "Báo hiệu cho người xung quanh biết xe đang lùi để tránh",
+    "explain": "Còi lùi là thiết bị an toàn bắt buộc để cảnh báo cho người đi bộ ở điểm mù phía sau xe."
+  },
+  {
+    "id": 91,
+    "question": "Khoảng cách an toàn tối thiểu giữa hai xe nâng chạy cùng chiều là bao nhiêu?",
+    "options": [
+      "1 mét",
+      "Bằng chiều dài của 3 chiếc xe nâng",
+      "Sát đuôi nhau",
+      "50 cm"
+    ],
+    "answer": "Bằng chiều dài của 3 chiếc xe nâng",
+    "explain": "Khoảng cách này đảm bảo người lái có đủ thời gian phản ứng nếu xe phía trước dừng đột ngột."
+  },
+  {
+    "id": 92,
+    "question": "Khi làm việc dưới trời mưa, người lái xe nâng dầu cần chú ý gì nhất?",
+    "options": [
+      "Ướt quần áo",
+      "Đường trơn trượt, tầm nhìn giảm và hệ thống phanh có thể bị kém hiệu quả",
+      "Xe chạy nhanh hơn",
+      "Không cần chú ý gì"
+    ],
+    "answer": "Đường trơn trượt, tầm nhìn giảm và hệ thống phanh có thể bị kém hiệu quả",
+    "explain": "Nước mưa làm giảm ma sát giữa lốp và mặt đường, đồng thời làm ướt hệ thống phanh tang trống gây trượt phanh."
+  },
+  {
+    "id": 93,
+    "question": "Hành động vừa lái xe nâng vừa sử dụng điện thoại di động bị xử lý như thế nào?",
+    "options": [
+      "Được phép nếu dùng tai nghe",
+      "Bị cấm hoàn toàn vì gây mất tập trung dẫn đến tai nạn",
+      "Được dùng khi xe chạy chậm",
+      "Chỉ dùng để xem giờ"
+    ],
+    "answer": "Bị cấm hoàn toàn vì gây mất tập trung dẫn đến tai nạn",
+    "explain": "Sử dụng điện thoại làm giảm khả năng phản xạ và quan sát, là nguyên nhân hàng đầu gây va chạm trong kho."
+  },
+  {
+    "id": 94,
+    "question": "Khi pallet gỗ bị gãy hoặc mục nát, người lái nên làm gì?",
+    "options": [
+      "Vẫn nâng bình thường",
+      "Không nâng, yêu cầu thay pallet mới để đảm bảo an toàn cho hàng và người",
+      "Dùng băng keo dán lại rồi nâng",
+      "Nâng thật nhanh"
+    ],
+    "answer": "Không nâng, yêu cầu thay pallet mới để đảm bảo an toàn cho hàng và người",
+    "explain": "Pallet hỏng có thể gãy đổ hàng khi đang ở trên cao, gây tai nạn nghiêm trọng."
+  },
+  {
+    "id": 95,
+    "question": "Tại sao phải kiểm tra xích nâng thường xuyên?",
+    "options": [
+      "Để xích không bị bẩn",
+      "Phát hiện các mắt xích bị nứt, dãn hoặc thiếu dầu bôi trơn để tránh đứt xích rơi hàng",
+      "Để xích bóng loáng",
+      "Để xe chạy êm hơn"
+    ],
+    "answer": "Phát hiện các mắt xích bị nứt, dãn hoặc thiếu dầu bôi trơn để tránh đứt xích rơi hàng",
+    "explain": "Xích nâng chịu toàn bộ tải trọng của hàng hóa. Một mắt xích hỏng có thể dẫn đến thảm họa nếu không phát hiện kịp thời."
+  },
+  {
+    "id": 96,
+    "question": "Trong bãi đỗ xe, nên đỗ xe nâng như thế nào?",
+    "options": [
+      "Đỗ chắn ngang lối đi",
+      "Đỗ đúng nơi quy định, không gây cản trở lối thoát hiểm và thiết bị chữa cháy",
+      "Đỗ ở đâu cũng được",
+      "Đỗ gần nơi có nguồn điện"
+    ],
+    "answer": "Đỗ đúng nơi quy định, không gây cản trở lối thoát hiểm và thiết bị chữa cháy",
+    "explain": "Việc đỗ xe đúng chỗ đảm bảo luồng giao thông trong kho không bị tắc nghẽn và an toàn khi có sự cố cháy nổ."
+  },
+  {
+    "id": 97,
+    "question": "Cần gạt điều khiển thủy lực có bao nhiêu hướng cơ bản (loại phổ thông)?",
+    "options": [
+      "1 hướng",
+      "2 hướng (Lên/Xuống hoặc Nghiêng trước/sau)",
+      "4 hướng",
+      "Xoay tròn"
+    ],
+    "answer": "2 hướng (Lên/Xuống hoặc Nghiêng trước/sau)",
+    "explain": "Mỗi cần gạt thường điều khiển một chức năng với hai hướng chuyển động ngược nhau."
+  },
+  {
+    "id": 98,
+    "question": "Khi lái xe nâng qua các góc cua khuất tầm nhìn, người lái phải làm gì?",
+    "options": [
+      "Chạy nhanh qua",
+      "Giảm tốc độ, đi sát bên phải và nhấn còi cảnh báo",
+      "Tắt đèn",
+      "Dừng lại chờ 5 phút"
+    ],
+    "answer": "Giảm tốc độ, đi sát bên phải và nhấn còi cảnh báo",
+    "explain": "Nhấn còi là cách thông báo sự hiện diện của mình cho những người ở phía bên kia góc cua không nhìn thấy mình."
+  },
+  {
+    "id": 99,
+    "question": "Ý nghĩa của vạch kẻ đường màu vàng trong kho hàng là gì?",
+    "options": [
+      "Để trang trí",
+      "Phân định lối đi an toàn cho xe nâng và lối dành cho người đi bộ",
+      "Nơi để rác",
+      "Cấm đi vào"
+    ],
+    "answer": "Phân định lối đi an toàn cho xe nâng và lối dành cho người đi bộ",
+    "explain": "Tuân thủ vạch kẻ đường giúp giảm thiểu va chạm giữa xe nâng và người đi bộ."
+  },
+  {
+    "id": 100,
+    "question": "Khi thấy đồng hồ báo áp suất dầu bôi trơn động cơ xuống thấp (vạch đỏ), bạn làm gì?",
+    "options": [
+      "Cố chạy nốt",
+      "Dừng máy ngay lập tức để kiểm tra dầu vì có nguy cơ cháy máy",
+      "Tăng ga mạnh hơn",
+      "Đổ thêm nước vào"
+    ],
+    "answer": "Dừng máy ngay lập tức để kiểm tra dầu vì có nguy cơ cháy máy",
+    "explain": "Áp suất dầu thấp nghĩa là các chi tiết động cơ không được bôi trơn, sẽ gây bó máy và hỏng hoàn toàn động cơ trong vài phút."
+  },
+  {
+    "id": 101,
+    "question": "Mục đích cuối cùng của việc tuân thủ các quy tắc an toàn xe nâng là gì?",
+    "options": [
+      "Để không bị trừ lương",
+      "Bảo vệ tính mạng con người, tài sản và nâng cao hiệu quả công việc",
+      "Để hoàn thành khóa học",
+      "Để làm vui lòng quản đốc"
+    ],
+    "answer": "Bảo vệ tính mạng con người, tài sản và nâng cao hiệu quả công việc",
+    "explain": "An toàn là trên hết. Vận hành an toàn giúp mọi người trở về nhà bình an mỗi ngày."
   }
 ];
