@@ -1,95 +1,198 @@
-// 1. Cấu hình - Giữ nguyên Link Web App của anh
+// --- 1. CẤU HÌNH WEB APP URL ---
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwxGySySYeE0wsg-41K5lTQUYgL_beTxmCGagDfwQO1AUxLs_l8K4iGMgz-jKE9sxc/exec";
 
-let selectedQuestions = [];
-let timeLeft = 1200; 
+// --- 2. BIẾN TRẠNG THÁI ---
+let selectedQuestions = []; // 30 câu ngẫu nhiên
+let studentAnswers = [];    /* Mảng lưu đáp án: [{qIndex:0, selectedAnswer:"A"}, ...] */
+let currentQuestionIndex = 0; // Câu hỏi đang hiển thị
+let timeLeft = 1200; // 20 phút (1200 giây)
 let timerInterval;
 
-// HÀM QUAN TRỌNG: Đã đổi tên để khớp với nút bấm trong giao diện của anh
-async function startQuiz() {
-    // Lấy dữ liệu từ giao diện (đảm bảo ID khớp với HTML)
-    const nameInput = document.getElementById('studentName');
-    const idInput = document.getElementById('studentID');
-
-    if (!nameInput || !idInput) {
-        console.error("Không tìm thấy ô nhập liệu! Hãy kiểm tra ID trong HTML.");
-        return;
-    }
-
-    const name = nameInput.value.trim();
-    const id = idInput.value.trim();
+// --- 3. HÀM BẮT ĐẦU THI ---
+function startQuiz() {
+    const name = document.getElementById('studentName').value.trim();
+    const id = document.getElementById('studentID').value.trim();
 
     if (!name || !id) {
-        alert("Thầy nhắc học viên nhập đủ Họ tên và Mã số/Lớp nhé!");
+        alert("Vui lòng nhập đủ Họ tên và Khóa!");
         return;
     }
 
-    if (typeof questionBank === 'undefined' || questionBank.length === 0) {
-        alert("Lỗi: File data.js chưa được nạp hoặc không có dữ liệu!");
+    // Kiểm tra dữ liệu
+    if (typeof questionBank === 'undefined' || questionBank.length < 30) {
+        alert("Lỗi: Không tìm thấy file data.js hoặc ngân hàng câu hỏi quá ít!");
         return;
     }
 
-    // Chuyển màn hình
-    document.getElementById('start-screen').style.display = 'none';
-    document.getElementById('quiz-screen').style.display = 'block';
-
-    // Chọn 30 câu ngẫu nhiên
+    // Chọn 30 câu ngẫu nhiên từ data.js
     selectedQuestions = [...questionBank].sort(() => 0.5 - Math.random()).slice(0, 30);
+    studentAnswers = []; // Xóa đáp án cũ
 
-    renderQuestions();
+    // Hiển thị giao diện làm bài
+    document.getElementById('start-screen').style.display = 'none';
+    document.getElementById('caee-header').style.display = 'flex';
+    document.getElementById('quiz-screen').style.display = 'grid';
+
+    // Cập nhật thông tin học viên trên Header
+    document.getElementById('header-student-info').innerText = `Học viên: ${name}`;
+
+    // Tạo sơ đồ câu hỏi (bên phải)
+    generateNavigationGrid();
+    
+    // Hiển thị câu đầu tiên
+    showQuestion(0);
+    
+    // Chạy đồng hồ
     startTimer();
 }
 
-// Hàm hiển thị câu hỏi
-function renderQuestions() {
-    const container = document.getElementById('quiz-content');
-    let html = "";
-    selectedQuestions.forEach((q, i) => {
-        html += `
-            <div class="question-box shadow-sm mb-4 p-3 bg-white rounded text-start">
-                <h6 class="fw-bold text-primary">Câu ${i + 1}: ${q.question}</h6>
-                <div class="mt-2">
-                    ${q.options.map((opt, index) => `
-                        <div class="form-check mb-2">
-                            <input class="form-check-input" type="radio" name="q${i}" id="q${i}_${index}" value="${opt}">
-                            <label class="form-check-label" for="q${i}_${index}">${opt}</label>
-                        </div>
-                    `).join('')}
-                </div>
+// --- 4. HÀM HIỂN THỊ CÂU HỎI TỪNG CÂU ---
+function showQuestion(index) {
+    currentQuestionIndex = index;
+    const q = selectedQuestions[index];
+    const content = document.getElementById('quiz-content');
+    
+    // Tìm đáp án học viên đã chọn trước đó (nếu có)
+    const storedAnswer = studentAnswers.find(item => item.qIndex === index);
+
+    let optionsHtml = "";
+    // Ánh xạ options thành giao diện
+    const optionLabels = ['A', 'B', 'C', 'D'];
+    q.options.forEach((opt, idx) => {
+        const isSelected = storedAnswer && storedAnswer.selectedAnswer === opt;
+        optionsHtml += `
+            <div class="option-item ${isSelected ? 'selected' : ''}" onclick="selectAnswer(this, ${index}, '${opt}')">
+                <input type="radio" name="opt" ${isSelected ? 'checked' : ''} style="display:none;">
+                <label class="option-label">${opt}</label>
             </div>`;
     });
-    container.innerHTML = html;
+
+    // Tạo nội dung HTML
+    content.innerHTML = `
+        <div class="question-header">
+            <span class="subject-badge">KỸ THUẬT LÁI</span>
+            <span class="q-count">Câu ${index + 1}/30</span>
+        </div>
+        <div class="question-text">${q.question}</div>
+        
+        <div class="options-group">
+            ${optionsHtml}
+        </div>
+        
+        <div class="navigation-btns">
+            <button class="btn-nav btn-prev" onclick="prevQuestion()" ${index === 0 ? 'style="visibility:hidden;"' : ''}>‹ TRƯỚC</button>
+            <button class="btn-nav btn-next" onclick="nextQuestion()">TIẾP ›</button>
+        </div>
+    `;
+
+    // Cập nhật trạng thái lưới câu hỏi (Màu Cam khi đang chọn)
+    updateGridStatus(index);
 }
 
-// Đồng hồ đếm ngược
+// --- 5. HÀM XỬ LÝ CHỌN ĐÁP ÁN ---
+function selectAnswer(element, qIndex, answer) {
+    // Lưu đáp án vào mảng
+    const existingIndex = studentAnswers.findIndex(item => item.qIndex === qIndex);
+    if (existingIndex !== -1) {
+        studentAnswers[existingIndex].selectedAnswer = answer;
+    } else {
+        studentAnswers.push({ qIndex: qIndex, selectedAnswer: answer });
+    }
+
+    // Cập nhật giao diện (màu xanh cho đáp án được chọn)
+    const options = element.parentElement.querySelectorAll('.option-item');
+    options.forEach(opt => opt.classList.remove('selected'));
+    element.classList.add('selected');
+
+    // Cập nhật sơ đồ câu hỏi (Màu Xanh khi đã trả lời)
+    updateGridStatus(qIndex);
+}
+
+// --- 6. HÀM ĐIỀU HƯỚNG ---
+function nextQuestion() {
+    if (currentQuestionIndex < selectedQuestions.length - 1) {
+        showQuestion(currentQuestionIndex + 1);
+    } else {
+        alert("Bạn đã ở câu hỏi cuối cùng. Nhấn NỘP BÀI.");
+    }
+}
+
+function prevQuestion() {
+    if (currentQuestionIndex > 0) {
+        showQuestion(currentQuestionIndex - 1);
+    }
+}
+
+// --- 7. TẠO SƠ ĐỒ CÂU HỎI (GRID) ---
+function generateNavigationGrid() {
+    const grid = document.getElementById('nav-grid');
+    grid.innerHTML = "";
+    selectedQuestions.forEach((q, i) => {
+        const item = document.createElement('div');
+        item.classList.add('grid-item');
+        item.id = `grid-item-${i}`;
+        item.innerText = i + 1;
+        item.onclick = () => showQuestion(i);
+        grid.appendChild(item);
+    });
+}
+
+// --- 8. CẬP NHẬT TRẠNG THÁI MÀU GRID ---
+function updateGridStatus(currentIndex) {
+    for (let i = 0; i < 30; i++) {
+        const item = document.getElementById(`grid-item-${i}`);
+        if (!item) continue;
+
+        // Reset trạng thái
+        item.classList.remove('active', 'answered');
+
+        // Màu xanh cho câu đã trả lời
+        const isAnswered = studentAnswers.some(ans => ans.qIndex === i);
+        if (isAnswered) {
+            item.classList.add('answered');
+        }
+
+        // Màu cam cho câu đang chọn
+        if (i === currentIndex) {
+            item.classList.add('active');
+        }
+    }
+}
+
+// --- 9. ĐỒNG HỒ ĐẾM NGƯỢC ---
 function startTimer() {
     timerInterval = setInterval(() => {
         timeLeft--;
         let min = Math.floor(timeLeft / 60);
         let sec = timeLeft % 60;
-        const timerDoc = document.getElementById('timer');
-        if(timerDoc) timerDoc.innerText = `Thời gian còn lại: ${min}:${sec < 10 ? '0' : ''}${sec}`;
+        document.getElementById('timer').innerText = `${min}:${sec < 10 ? '0' : ''}${sec}`;
         
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            alert("Hết giờ!");
+            alert("Hết giờ làm bài!");
             submitQuiz();
         }
     }, 1000);
 }
 
-// Nộp bài
+// --- 10. NỘP BÀI ---
 async function submitQuiz() {
     clearInterval(timerInterval);
     let score = 0;
-    selectedQuestions.forEach((q, i) => {
-        const selected = document.querySelector(`input[name="q${i}"]:checked`);
-        if (selected && selected.value === q.answer) score++;
+
+    // Chấm điểm
+    studentAnswers.forEach(ans => {
+        const originalQuestion = selectedQuestions[ans.qIndex];
+        if (ans.selectedAnswer === originalQuestion.answer) {
+            score++;
+        }
     });
 
     const status = score >= 25 ? "ĐẠT" : "KHÔNG ĐẠT";
-    alert(`Kết quả: ${score}/30 câu. Trạng thái: ${status}`);
+    
+    alert(`Chúc mừng! Kết quả của bạn: ${score}/30 câu - Trạng thái: ${status}`);
 
+    // Gửi dữ liệu về Google Sheets
     const payload = {
         name: document.getElementById('studentName').value,
         id: document.getElementById('studentID').value,
@@ -97,6 +200,16 @@ async function submitQuiz() {
         status: status
     };
 
-    fetch(WEB_APP_URL, { method: "POST", mode: "no-cors", body: JSON.stringify(payload) });
-    location.reload(); 
+    try {
+        await fetch(WEB_APP_URL, {
+            method: "POST",
+            mode: "no-cors", // Sử dụng no-cors cho link script
+            body: JSON.stringify(payload)
+        });
+    } catch (e) {
+        // no-cors luôn catch lỗi nhưng dữ liệu vẫn có thể đã gửi
+        console.log("Kết thúc gửi.");
+    }
+
+    location.reload(); // Quay lại màn hình bắt đầu
 }
