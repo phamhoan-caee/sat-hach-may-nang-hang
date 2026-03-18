@@ -69,8 +69,7 @@ function showQuestion(index) {
 
     // Tạo nội dung HTML
     content.innerHTML = `
-        <div class="question-header">
-            <span class="subject-badge">KỸ THUẬT LÁI</span>
+        <div class="question-header"> 
             <span class="q-count">Câu ${index + 1}/30</span>
         </div>
         <div class="question-text">${q.question}</div>
