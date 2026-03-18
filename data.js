@@ -28,11 +28,11 @@ const questionBank = [
     "question": "Khi khởi động xe nâng, cần kiểm tra gì trước?",
     "options": [
       "Phanh tay đã kéo chắc chắn.",
-      "Càng nâng đang ở vị trí thấp nhất",
-      "Cần tiến/lùi ở vị trí trung gian",
-      "Tất cả các ý trên"
+      "Càng nâng đang ở vị trí thấp nhất.",
+      "Cần tiến/lùi ở vị trí trung gian.",
+      "Tất cả các ý trên."
     ],
-    "answer": "Tất cả các ý trên",
+    "answer": "Tất cả các ý trên.",
     "explain": "Phải đảm bảo an toàn tuyệt đối trước khi khởi động động cơ."
   },
   {
@@ -40,8 +40,8 @@ const questionBank = [
     "question": "Khi cho xe nâng di chuyển, cần kiểm tra gì trước?",
     "options": [
       "Phanh, ly hợp, hoạt động của càng nâng.",
-      "Mức dầu",
-      "Áp suất lốp",
+      "Mức dầu.",
+      "Áp suất lốp.",
       "Mức nước làm mát."
     ],
     "answer": "Phanh, ly hợp, hoạt động của càng nâng.",
@@ -123,12 +123,12 @@ const questionBank = [
     "id": 11,
     "question": "Khi lái xe phải luôn giữ càng cách mặt đất khoảng bao nhiêu cm?",
     "options": [
-      "5 cm",
-      "10 cm",
-      "15–20 cm",
-      "30 cm"
+      "5 cm.",
+      "10 cm.",
+      "15–20 cm.",
+      "30 cm."
     ],
-    "answer": "15–20 cm",
+    "answer": "15–20 cm.",
     "explain": "Giữ càng vừa đủ để tránh cản vật và giữ thăng bằng."
   },
   {
@@ -171,7 +171,7 @@ const questionBank = [
     "id": 15,
     "question": "Khi đổ nhiên liệu cần?",
     "options": [
-      "Để máy chạy.",
+      "Để máy Nâng nổ máy.",
       "Tắt máy, không hút thuốc.",
       "Đứng gần khu vực kín gió.",
       "Dùng lửa để soi."
@@ -243,132 +243,132 @@ const questionBank = [
     "id": 21,
     "question": "Khi nâng một kiện hàng không đồng nhất về khối lượng, phần nặng hơn nên được đặt ở đâu?",
     "options": [
-      "Ở phía đầu càng nâng",
-      "Ở bên trái hoặc bên phải",
-      "Càng gần giá đỡ hàng (phía trong) càng tốt",
-      "Đặt ở giữa kiện hàng"
+      "Ở phía đầu càng nâng.",
+      "Ở bên trái hoặc bên phải.",
+      "Càng gần giá đỡ hàng (phía trong) càng tốt.",
+      "Đặt ở giữa kiện hàng."
     ],
-    "answer": "Càng gần giá đỡ hàng (phía trong) càng tốt",
+    "answer": "Càng gần giá đỡ hàng (phía trong) càng tốt.",
     "explain": "Đặt phần nặng hơn của tải càng gần giá đỡ càng tốt sẽ giúp tâm tải gần với xe hơn, làm tăng sự ổn định."
   },
   {
     "id": 22,
     "question": "Khi di chuyển với càng nâng không có tải, độ cao an toàn của càng so với mặt đất là bao nhiêu?",
     "options": [
-      "Càng cao càng tốt",
-      "Khoảng 15-20 cm",
-      "Chạm đất",
-      "Cao ngang tầm mắt"
+      "Càng cao càng tốt.",
+      "Khoảng 15-20 cm.",
+      "Chạm đất.",
+      "Cao ngang tầm mắt."
     ],
-    "answer": "Khoảng 15-20 cm",
+    "answer": "Khoảng 15-20 cm.",
     "explain": "Nâng càng cách mặt đất khoảng 15-20 cm giúp tránh vấp phải các chướng ngại vật nhỏ trên sàn mà vẫn giữ được trọng tâm xe ở mức thấp và ổn định."
   },
   {
     "id": 23,
     "question": "Đâu là cách an toàn nhất để đi qua đường ray xe lửa hoặc các gờ giảm tốc cao?",
     "options": [
-      "Đi với tốc độ cao để vượt qua nhanh",
-      "Đi chéo một góc và di chuyển rất chậm",
-      "Dừng lại và dùng xe khác để đưa hàng qua",
-      "Nâng càng lên thật cao"
+      "Đi với tốc độ cao để vượt qua nhanh.",
+      "Đi chéo một góc và di chuyển rất chậm.",
+      "Dừng lại và dùng xe khác để đưa hàng qua.",
+      "Nâng càng lên thật cao."
     ],
-    "answer": "Đi chéo một góc và di chuyển rất chậm",
+    "answer": "Đi chéo một góc và di chuyển rất chậm.",
     "explain": "Đi chéo một góc giúp từng bánh xe vượt qua chướng ngại vật một cách từ từ, giảm xóc và tránh nguy cơ kẹt gầm hoặc rơi hàng."
   },
   {
     "id": 24,
     "question": "Trong trường hợp xe nâng bị lật, người điều khiển nên làm gì?",
     "options": [
-      "Nhảy khỏi xe ngay",
-      "Giữ chắc vô lăng, nghiêng người ngược hướng lật",
-      "Thoát ra bằng cửa phụ",
-      "Nằm xuống sàn xe"
+      "Nhảy khỏi xe ngay.",
+      "Giữ chắc vô lăng, nghiêng người ngược hướng xe nâng lật.",
+      "Thoát ra bằng cửa phụ.",
+      "Nằm xuống sàn xe."
     ],
-    "answer": "Giữ chắc vô lăng, nghiêng người ngược hướng lật",
+    "answer": "Giữ chắc vô lăng, nghiêng người ngược hướng xe nâng lật.",
     "explain": "Tuyệt đối không nhảy khỏi xe. Phải giữ chặt vô lăng, gồng chắc chân và nghiêng người ngược với hướng lật để khung bảo vệ che chắn cho bạn."
   },
   {
     "id": 25,
     "question": "Khi thấy đèn báo nhiệt độ nước làm mát động cơ ở vạch đỏ, cần làm gì?",
     "options": [
-      "Tiếp tục chạy cho đến cuối ca",
-      "Dừng xe ở nơi an toàn, để động cơ chạy không tải cho nguội dần rồi tắt máy",
-      "Tắt máy ngay lập tức",
-      "Đổ thêm nước lạnh vào ngay"
+      "Tiếp tục chạy cho đến cuối ca.",
+      "Dừng xe ở nơi an toàn, để động cơ chạy không tải cho nguội dần rồi tắt máy.",
+      "Tắt máy ngay lập tức.",
+      "Đổ thêm nước lạnh vào ngay."
     ],
-    "answer": "Dừng xe ở nơi an toàn, để động cơ chạy không tải cho nguội dần rồi tắt máy",
+    "answer": "Dừng xe ở nơi an toàn, để động cơ chạy không tải cho nguội dần rồi tắt máy.",
     "explain": "Tắt máy đột ngột khi động cơ quá nóng có thể gây hư hỏng nặng. Cần để máy chạy không tải cho nhiệt độ giảm dần rồi mới tắt."
   },
   {
     "id": 26,
     "question": "Tại sao không nên quay đầu xe hoặc đi ngang trên dốc?",
     "options": [
-      "Vì làm mòn lốp nhanh",
-      "Vì làm tăng nguy cơ lật xe nghiêm trọng",
-      "Vì sẽ vi phạm luật giao thông",
-      "Vì làm hỏng động cơ"
+      "Vì làm mòn lốp nhanh.",
+      "Vì làm tăng nguy cơ lật xe nghiêm trọng.",
+      "Vì sẽ vi phạm luật giao thông.",
+      "Vì làm hỏng động cơ."
     ],
-    "answer": "Vì làm tăng nguy cơ lật xe nghiêm trọng",
+    "answer": "Vì làm tăng nguy cơ lật xe nghiêm trọng.",
     "explain": "Khi ở trên dốc, trọng tâm của xe bị lệch. Việc quay đầu hoặc đi ngang sẽ làm trọng tâm dễ dàng vượt ra ngoài tam giác ổn định của xe, gây nguy cơ lật xe rất cao."
   },
   {
     "id": 27,
     "question": "Nếu xe nâng được trang bị bình chữa cháy, người vận hành cần phải làm gì?",
     "options": [
-      "Không cần quan tâm đến nó",
-      "Biết vị trí và cách sử dụng bình chữa cháy",
-      "Tháo nó ra để xe nhẹ hơn",
-      "Chỉ kỹ thuật viên mới được dùng"
+      "Không cần quan tâm đến nó.",
+      "Biết vị trí và cách sử dụng bình chữa cháy.",
+      "Tháo nó ra để xe nhẹ hơn.",
+      "Chỉ kỹ thuật viên mới được dùng."
     ],
-    "answer": "Biết vị trí và cách sử dụng bình chữa cháy",
+    "answer": "Biết vị trí và cách sử dụng bình chữa cháy.",
     "explain": "Người vận hành phải biết bình chữa cháy được đặt ở đâu, tình trạng của nó và cách sử dụng cơ bản trong trường hợp khẩn cấp."
   },
   {
     "id": 28,
     "question": "Xe nâng dùng để làm gì?",
     "options": [
-      "Dùng trong xây dựng nhà cao tầng",
-      "Làm mát kho lạnh",
-      "Nâng hạ và di chuyển hàng hóa",
-      "Tạo điện cho nhà xưởng"
+      "Dùng trong xây dựng nhà cao tầng.",
+      "Làm mát kho lạnh.",
+      "Nâng hạ và di chuyển hàng hóa.",
+      "Tạo điện cho nhà xưởng."
     ],
-    "answer": "Nâng hạ và di chuyển hàng hóa",
+    "answer": "Nâng hạ và di chuyển hàng hóa.",
     "explain": "Xe nâng là thiết bị chuyên dùng để nâng, hạ và vận chuyển hàng hóa trong kho, bãi, nhà máy."
   },
   {
     "id": 29,
     "question": "Khi sạc ắc quy cho xe nâng điện, tại sao phải thực hiện ở nơi thông thoáng?",
     "options": [
-      "Để xe nguội nhanh hơn",
-      "Vì quá trình sạc sinh ra khí Hydro dễ cháy nổ",
-      "Để dễ dàng quan sát quá trình sạc",
-      "Để tránh bụi bẩn"
+      "Để xe nguội nhanh hơn.",
+      "Vì quá trình sạc sinh ra khí Hydro dễ cháy nổ.",
+      "Để dễ dàng quan sát quá trình sạc.",
+      "Để tránh bụi bẩn."
     ],
-    "answer": "Vì quá trình sạc sinh ra khí Hydro dễ cháy nổ",
+    "answer": "Vì quá trình sạc sinh ra khí Hydro dễ cháy nổ.",
     "explain": "Quá trình sạc sinh ra khí Hydro, một loại khí rất dễ cháy nổ. Việc sạc ở nơi thông thoáng giúp khí này khuếch tán, giảm nguy cơ cháy nổ."
   },
   {
     "id": 30,
     "question": "Việc lắp các phụ kiện như kẹp giấy, gầu xúc... ảnh hưởng thế nào đến tải trọng nâng của xe?",
     "options": [
-      "Tăng tải trọng nâng",
-      "Không ảnh hưởng",
-      "Làm giảm tải trọng nâng cho phép của xe",
-      "Chỉ ảnh hưởng đến tốc độ"
+      "Tăng tải trọng nâng.",
+      "Không ảnh hưởng.",
+      "Làm giảm tải trọng nâng cho phép của xe.",
+      "Chỉ ảnh hưởng đến tốc độ."
     ],
-    "answer": "Làm giảm tải trọng nâng cho phép của xe",
+    "answer": "Làm giảm tải trọng nâng cho phép của xe.",
     "explain": "Phụ kiện có trọng lượng riêng và làm thay đổi tâm tải của xe, do đó tải trọng nâng thực tế của xe sẽ bị giảm đi so với khi dùng càng nâng tiêu chuẩn."
   },
   {
     "id": 31,
     "question": "Tác dụng của bầu lọc nhiên liệu là gì?",
     "options": [
-      "Giúp nhiên liệu có màu đẹp hơn",
-      "Loại bỏ cặn bẩn và nước ra khỏi nhiên liệu trước khi vào động cơ",
-      "Tăng hiệu suất đốt cháy",
-      "Giúp tiết kiệm nhiên liệu"
+      "Giúp nhiên liệu có màu đẹp hơn.",
+      "Loại bỏ cặn bẩn và nước ra khỏi nhiên liệu trước khi vào động cơ.",
+      "Tăng hiệu suất đốt cháy.",
+      "Giúp tiết kiệm nhiên liệu."
     ],
-    "answer": "Loại bỏ cặn bẩn và nước ra khỏi nhiên liệu trước khi vào động cơ",
+    "answer": "Loại bỏ cặn bẩn và nước ra khỏi nhiên liệu trước khi vào động cơ.",
     "explain": "Lọc nhiên liệu có nhiệm vụ loại bỏ cặn bẩn, rỉ sét và nước có thể lẫn trong nhiên liệu, bảo vệ các chi tiết chính xác của hệ thống phun nhiên liệu."
   },
   {
