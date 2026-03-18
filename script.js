@@ -192,7 +192,7 @@ async function submitQuiz() {
     alert(`Chúc mừng! Kết quả của bạn: ${score}/30 câu - Trạng thái: ${status}`);
 
    // --- GỬI DỮ LIỆU VỀ GOOGLE SHEETS ---
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwYEfB-aH8qQZZAIgiBi5ib0vMTypcshOg9mSS-3284A7cMziwzPJk3g6O24q1RN_EJ/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwSwuj67kfx_es9c0UYIY_KnyLJHbEX2sc7joB5h8hPChDj5YLaPgdsfzHwNqBu7z4w/exec';
     
     const payload = {
         name: document.getElementById('studentName').value,
