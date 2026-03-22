@@ -207,7 +207,7 @@ async function submitQuiz(force = false) {
     alert(`Chúc mừng! Kết quả của bạn: ${score}/30 câu - Trạng thái: ${status}`);
 
     // 4. GỬI DỮ LIỆU VỀ GOOGLE SHEETS
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZxJn_lBBWX19t_YqmoC1sBl2Asnrc13j3UD0vHPzn4W35KOX_bCq7olCfSGFdUZCnjw/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzlaJtdDwuQaEuIo68KDuoTeYi6gejHW4TdWTdhEhs8ZTlrminVXPeYSxGIwhpsmNBbvA/exec';
     
    const payload = {
         name: studentName,
