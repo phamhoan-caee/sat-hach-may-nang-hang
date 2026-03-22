@@ -207,14 +207,14 @@ async function submitQuiz(force = false) {
     alert(`Chúc mừng! Kết quả của bạn: ${score}/30 câu - Trạng thái: ${status}`);
 
     // 4. GỬI DỮ LIỆU VỀ GOOGLE SHEETS
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwNkK9MVz7IGECvsXJvqoN7gQXfHI189DLuMgy6m4_tc3W2W5lGD35hy5TmdbkNYAGJGA/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZxJn_lBBWX19t_YqmoC1sBl2Asnrc13j3UD0vHPzn4W35KOX_bCq7olCfSGFdUZCnjw/exec';
     
    const payload = {
         name: studentName,
         id: studentID,
         score: score + "/30",
         status: status,
-        sheetName: "Ketquacantruc" // Thêm tên tab để Script biết chỗ lưu
+        sheetName: "Ketquananghang" // Thêm tên tab để Script biết chỗ lưu
     };
 
     try {
